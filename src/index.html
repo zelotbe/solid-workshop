@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Workshop Solid</title>
+    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="">
+    <header class="text-center">
+        <h1 class="display-1 ">Workshop Solid</h1>
+        <h2 class="" id="welkom">Welkom</h2>
+        <button class="btn btn-primary mt-3" name="btnLogin" id="btnLogin">Inloggen</button>
+        <button class="btn btn-danger mt-3 d-none" name="btnLogout" id="btnLogout">Uitloggen</button>
+    </header>
+    <main class="w-75 m-auto">
+        <div class="alert alert-danger mt-3 d-none" role="alert" id="error">
+            <p id="errorMessage"></p>
+        </div>
+
+        <div id="write" class="form-group">
+            <div class="row">
+                <div>
+                    <label class="form-label" id="podlabel" for="select-pod">Pod kiezen om data naar toe te
+                        schrijven:</label>
+                    <select class="form-control" id="select-pod" name="select-pod">
+                        <option value="">--Pod kiezen--</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div>
+                    <label class="form-label" id="listLabel" for="titles">Toevoegen aan: workshop/ToDo/studyList</label>
+                    <textarea class="form-control" name="titles" id="todo" rows="5" cols="42"></textarea>
+                    <p class="badge bg-success" id="status"></p><br>
+                    <button class="btn btn-primary w-25 mt-3" name="btnUpdate" id="btnUpdate">Updaten</button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
