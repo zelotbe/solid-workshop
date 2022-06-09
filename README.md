@@ -13,6 +13,8 @@ Otherwise we lose precious time.
 npm install
 ```
 
+> ! After installing make a dist folder and move your index.html to the folder. !
+
 ## Running our development environment
 
 We use webpack to compile our project and to serve it
