@@ -26,7 +26,7 @@ import {
     setThing
 } from "@inrupt/solid-client";
 
-import { VCARD, RDF, AS, SCHEMA_INRUPT } from "@inrupt/vocab-common-rdf";
+import { VCARD, RDF, AS, SCHEMA_INRUPT, FOAF } from "@inrupt/vocab-common-rdf";
 
 // DOM elements that we are gonna use
 const main = document.querySelector("main");
@@ -144,12 +144,7 @@ async function createList() {
 
     //TRY TO SAVE THE LIST
     try {
-        let savedReadingList = await saveSolidDatasetAt(
-            readingListUrl,
-            list,
-            { fetch: fetch }
-        );
-        status.textContent = "Lijst bijgewerkt";
+     
     } catch (error) {
         setError(error);
     }
@@ -160,27 +155,7 @@ async function getTodoList() {
 
     //SELECT VALUE CHECK
     if (SELECTED_POD !== "") {
-        const readingListUrl = `${SELECTED_POD}workshop/ToDo/studyList`;
-        list = await getSolidDataset(readingListUrl, { fetch: fetch });
-
-        let savedReadingList = await saveSolidDatasetAt(
-            readingListUrl,
-            list,
-            { fetch: fetch }
-        );
-
-        savedReadingList = await getSolidDataset(readingListUrl, { fetch: fetch });
-
-        let items = getThingAll(savedReadingList);
-
-        let listcontent = "";
-        for (let i = 0; i < items.length; i++) {
-            let item = getStringNoLocale(items[i], SCHEMA_INRUPT.name);
-            if (item !== null) {
-                listcontent += item + "\n";
-            }
-        }
-        todoList.textContent = listcontent;
+        
     }
 }
 function setError(message) {
